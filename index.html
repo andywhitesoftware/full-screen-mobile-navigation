@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/widescreen.css" media="screen and (min-width: 768px)">
+  <title>Full Screen and Mobile Navigation</title>
+</head>
+<body id="home">
+  <nav id="navbar"> 
+    <a href="#home" class="logo">AW</a>
+    <span id="js-hamburger-icon" class="hamburger-icon">
+      <i class="fas fa-bars"></i>
+    </span>
+  </nav>
+  <div id="main-nav" class="menu-overlay">
+    <span id="close-icon" class="close-menu"><i class="fas fa-times"></i></span>
+    <ul id="js-menu" class="menu-overlay-content">
+      <li><a href="#home" class="menu-item">Home</a></li>
+      <li><a href="#about" class="menu-item">About</a></li>
+      <li><a href="#blog" class="menu-item">Blog</a></li>
+      <li><a href="#portfolio" class="menu-item">My Work</a></li>
+      <li><a href="#contact" class="menu-item">Contact</a></li>
+    </ul>
+  </div>
+  <h1>Select the direction you want the menu to slide from:</h1>
+  <div class="btn">
+    <button type="button" id="top">Top</button>
+    <button type="button" id="left">Left</button>
+    <button type="button" id="right">Right</button>    
+  </div>
+  <p>Click the hamburger menu to see the menu!</p>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

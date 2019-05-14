@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+:root {
+  --primary-color: rgb(70, 66, 66);
+  --secondary-color: #aaa;
+  --text-color: rgb(29, 24, 24);
+  --opaque-text: rgba(255, 255, 255, 0.7);
+  --menu-overlay-color: rgba(0,0,0, 0.7);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: var(--secondary-color);
+  line-height: 1.4;
+  color: var(--text-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.logo {
+  padding-left: 1rem;
+  color: var(--secondary-color);
+  font-size: 2rem;
+}
+
+/* Navbar */
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0;
+  height: 70px;
+  background: var(--primary-color);
+}
+
+/* Buttons */
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+
+#top,
+#left,
+#right {
+  display: inline-block;
+  font-size: 1.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+button {
+  height: 3rem;
+  margin: 1rem;
+  width: 100px;
+  background-color: var(--opaque-text);
+  border-radius: 1rem;
+  border: none;
+  transition-duration: 0.3s;
+}
+
+button:hover {
+  border: 2xp solid royalblue;
+  border-radius: 20px;
+  color: var(--opaque-text);
+}
+
+button:active {
+  border: none;
+  background-color: royalblue;
+}
+
+/* Utility classes */
+h1 {
+  text-align: left;
+  padding-top: 3rem;
+  padding-bottom: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+/* Menu */
+
+/* Menu default menu overlay used at startup */
+.menu-overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  background-color: var(--menu-overlay-color);
+  overflow-x: hidden;
+  transition: 0.3s;
+}
+
+/* Left menu overlay */
+.left {
+  height: 100%;
+  width: 0;
+  /* Make menu stick to the top */
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* Ensure menu is on top */
+  z-index: 1;
+  /* Opaque menu color */
+  background-color: var(--menu-overlay-color);
+  /* No horizontal scroll */
+  overflow-x: hidden;
+  transition: 0.3s;
+}
+
+/* Right menu overlay */
+.right {
+  height: 100%;
+  /* Change width to view menu based on left/right or height slide direction */
+  width: 0;
+  /* Make menu stick to the top */
+  position: fixed;
+  right: 0;
+  top: 0;
+  /* Ensure menu is on the top */
+  z-index: 1;
+  /* Opaque menu color */
+  background-color: var(--menu-overlay-color);
+  /* No horizontal scroll */
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+/* Top menu overlay */
+.top {
+  /* Height of menu - set to 0% to hide menu when you want to slide down from top */
+  height: 0;
+  /* Change width to view menu based on left/right or height slide direction */
+  width: 100%;
+  /* Make menu stick to the top */
+  position: fixed;
+  top: 0;
+  /* Ensure menu is on the top */
+  z-index: 1;
+  /* Opaque menu color */
+  background-color: var(--menu-overlay-color);
+  /* No horizontal scroll */
+  overflow-y: hidden;
+  /* Half second slide transition effect */
+  transition: 0.3s;
+}
+
+/* Position the content inside the overlay */
+.menu-overlay .menu-overlay-content,
+.left .menu-overlay-content,
+.top .menu-overlay-content,
+.right .menu-overlay-content {
+  position: relative;
+  top: 25%; /* 25% from the top */
+  width: 100%; /* 100% width */
+  text-align: center; /* Centered text/links */
+  margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* Set menu links to block item so we can add some padding */
+.menu-overlay .menu-overlay-content .menu-item,
+.left .menu-overlay-content .menu-item,
+.top .menu-overlay-content .menu-item,
+.right .menu-overlay-content .menu-item {
+  display: block;
+  padding: .5rem;
+  font-size: 1.5rem;
+  /* Transition effect for hovering over a link */
+  transition: 0.4s;
+  color: var(--secondary-color);
+}
+
+/* When you mouse over the navigation links, change their color */
+.menu-overlay a:hover, .menu-overlay a:focus,
+.left a:hover, .left a:focus,
+.top a:hover, .top a:focus,
+.right a:hover, .right a:focus {
+  color: #8a2828;
+}
+
+.menu-overlay-content ul li {
+  list-style-type: none;
+}
+
+/* Setup the close button icon */
+.menu-overlay .close-menu,
+.left .close-menu,
+.top .close-menu,
+.right .close-menu {
+  position: absolute;
+  top: 2%;
+  right: 5%;
+  color: var(--secondary-color);
+  font-size: 1.75rem;
+}
+
+/* Setup the hambuger icon */
+.hamburger-icon {
+  padding-right: 1rem;
+  color: var(--secondary-color);
+  font-size: 1.5rem;
+}
